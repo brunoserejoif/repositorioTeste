@@ -1,0 +1,787 @@
+/* =========================================================
+   MOTOVEST - STYLE.CSS
+   Site institucional / vitrine
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+:root {
+    --preto: #0b0b0b;
+    --preto-claro: #141414;
+    --grafite: #1d1d1d;
+    --grafite-claro: #292929;
+    --laranja: #ff6500;
+    --laranja-claro: #ff8a00;
+    --branco: #ffffff;
+    --cinza: #bdbdbd;
+    --cinza-escuro: #777777;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.cabecalho {
+    background: rgba(8, 8, 8, 0.97);
+    border-bottom: 1px solid #242424;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.cabecalho-conteudo {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo img {
+    width: 220px;
+    max-height: 68px;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.menu a {
+    color: #eeeeee;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    transition: 0.25s;
+}
+
+.menu a:hover {
+    color: var(--laranja);
+}
+
+
+/* =========================================================
+   BANNER PRINCIPAL
+   A imagem banner.jpg deve ficar dentro da pasta img
+   ========================================================= */
+
+.banner {
+    min-height: 610px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.93) 0%,
+            rgba(0, 0, 0, 0.72) 42%,
+            rgba(0, 0, 0, 0.18) 100%
+        ),
+        url("../img/banner.jpg") center / cover no-repeat;
+}
+
+.banner-conteudo {
+    position: relative;
+    z-index: 2;
+}
+
+.banner-texto {
+    max-width: 650px;
+}
+
+.banner h1 {
+    font-size: clamp(3rem, 6vw, 5.8rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+}
+
+.banner h1 span {
+    color: var(--laranja);
+}
+
+.banner p {
+    max-width: 520px;
+    color: #eeeeee;
+    font-size: 1.25rem;
+    margin-bottom: 32px;
+}
+
+.botao {
+    display: inline-block;
+    background: var(--laranja);
+    color: var(--branco);
+    padding: 15px 28px;
+    border-radius: 6px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.25s;
+}
+
+.botao:hover {
+    background: var(--laranja-claro);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   DIFERENCIAIS
+   ========================================================= */
+
+.diferenciais {
+    background: #111111;
+    border-top: 1px solid #222222;
+    border-bottom: 1px solid #222222;
+}
+
+.diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.diferencial {
+    padding: 30px 25px;
+    border-right: 1px solid #292929;
+}
+
+.diferencial:last-child {
+    border-right: 0;
+}
+
+.diferencial h3 {
+    color: var(--laranja);
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.diferencial p {
+    color: var(--cinza);
+    font-size: 0.92rem;
+}
+
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+
+.sobre {
+    padding: 90px 0;
+    background: var(--preto);
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre h2,
+.titulo-secao h2,
+.instagram h2 {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.sobre h2 span,
+.titulo-secao h2 span,
+.instagram h2 span {
+    color: var(--laranja);
+}
+
+.sobre-texto p {
+    color: var(--cinza);
+    margin-bottom: 18px;
+    font-size: 1.04rem;
+}
+
+.sobre-imagem {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    min-height: 380px;
+    background: #171717;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    object-fit: cover;
+    opacity: 0.72;
+}
+
+.sobre-frase {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    max-width: 310px;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.sobre-frase strong,
+.sobre-frase span {
+    display: block;
+}
+
+.sobre-frase span {
+    color: var(--laranja);
+}
+
+
+/* =========================================================
+   PRODUTOS / CAMISAS
+   ========================================================= */
+
+.produtos {
+    padding: 90px 0;
+    background: #101010;
+}
+
+.titulo-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.titulo-secao p {
+    color: var(--cinza);
+    max-width: 650px;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.produto-card {
+    background: #191919;
+    border: 1px solid #272727;
+    border-radius: 7px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.produto-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--laranja);
+}
+
+.produto-card > img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    background: #222222;
+}
+
+.produto-info {
+    padding: 20px;
+}
+
+.produto-info h3 {
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.produto-info p {
+    color: var(--cinza);
+    font-size: 0.9rem;
+    min-height: 46px;
+}
+
+.produto-info a {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--laranja);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+}
+
+.produto-info a:hover {
+    color: var(--laranja-claro);
+}
+
+
+/* =========================================================
+   PROMOÇÃO
+   ========================================================= */
+
+.promocao {
+    padding: 90px 0;
+    background:
+        radial-gradient(circle at 20% 50%, #331308 0%, #15100e 30%, #090909 68%);
+    border-top: 1px solid #242424;
+    border-bottom: 1px solid #242424;
+}
+
+.promocao-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.promocao-tag {
+    display: inline-block;
+    color: var(--laranja);
+    border: 1px solid var(--laranja);
+    border-radius: 20px;
+    padding: 6px 15px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.promocao h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.desconto {
+    color: var(--laranja);
+    font-size: clamp(4.2rem, 8vw, 7.5rem);
+    font-weight: 900;
+    line-height: 1;
+    margin: 15px 0;
+}
+
+.promocao-destaque {
+    color: var(--branco) !important;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.promocao-texto p {
+    color: var(--cinza);
+    margin-bottom: 20px;
+    max-width: 570px;
+}
+
+.promocao-imagem {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.promocao-imagem img {
+    width: 100%;
+    min-height: 450px;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   OUTROS PRODUTOS
+   ========================================================= */
+
+.outros-produtos {
+    padding: 90px 0;
+    background: #0d0d0d;
+}
+
+.outros-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.outro-card {
+    background: #181818;
+    border: 1px solid #282828;
+    padding-bottom: 22px;
+    text-align: center;
+    border-radius: 7px;
+    overflow: hidden;
+    transition: 0.25s;
+}
+
+.outro-card:hover {
+    border-color: var(--laranja);
+    transform: translateY(-5px);
+}
+
+.outro-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: #222222;
+    margin-bottom: 18px;
+}
+
+.outro-card h3 {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.outro-card p {
+    color: var(--cinza);
+    font-size: 0.86rem;
+    padding: 0 14px;
+}
+
+
+/* =========================================================
+   INSTAGRAM
+   ========================================================= */
+
+.instagram {
+    padding: 80px 0;
+    background: #131313;
+    border-top: 1px solid #242424;
+}
+
+.instagram-cabecalho {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.instagram-cabecalho p {
+    color: var(--cinza);
+}
+
+.botao-instagram {
+    border: 1px solid var(--laranja);
+    color: var(--laranja);
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: 800;
+    transition: 0.25s;
+}
+
+.botao-instagram:hover {
+    background: var(--laranja);
+    color: var(--branco);
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.instagram-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+.instagram-grid img:hover {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+
+.contato {
+    padding: 70px 0;
+    background: #090909;
+    border-top: 1px solid #222222;
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 45px;
+}
+
+.contato-marca img {
+    width: 220px;
+    margin-bottom: 15px;
+}
+
+.contato-marca p,
+.contato-item p {
+    color: var(--cinza);
+    font-size: 0.9rem;
+}
+
+.contato-item h3 {
+    color: var(--branco);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.contato-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.contato-item a:hover {
+    color: var(--laranja-claro);
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.rodape {
+    background: #050505;
+    border-top: 1px solid #222222;
+    color: #8c8c8c;
+}
+
+.rodape-conteudo {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLETS
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu a {
+        font-size: 0.78rem;
+    }
+
+    .diferenciais-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .diferencial:nth-child(2) {
+        border-right: 0;
+    }
+
+    .diferencial:nth-child(-n+2) {
+        border-bottom: 1px solid #292929;
+    }
+
+    .sobre-grid,
+    .promocao-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produtos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .outros-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contato-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULARES
+   ========================================================= */
+
+@media (max-width: 720px) {
+
+    .container {
+        width: min(92%, 600px);
+    }
+
+    .cabecalho-conteudo {
+        min-height: auto;
+        padding: 16px 0;
+        flex-direction: column;
+    }
+
+    .logo img {
+        width: 190px;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+
+    .menu a {
+        font-size: 0.72rem;
+    }
+
+    .banner {
+        min-height: 560px;
+        background-position: 65% center;
+    }
+
+    .banner h1 {
+        letter-spacing: -1px;
+    }
+
+    .banner p {
+        font-size: 1.05rem;
+    }
+
+    .diferenciais-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diferencial {
+        border-right: 0;
+        border-bottom: 1px solid #292929;
+    }
+
+    .diferencial:last-child {
+        border-bottom: 0;
+    }
+
+    .sobre,
+    .produtos,
+    .promocao,
+    .outros-produtos,
+    .instagram {
+        padding: 65px 0;
+    }
+
+    .sobre-grid,
+    .promocao-grid {
+        gap: 35px;
+    }
+
+    .sobre-frase {
+        font-size: 1.6rem;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .titulo-secao,
+    .instagram-cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produto-card > img {
+        height: auto;
+        max-height: 480px;
+    }
+
+    .promocao-imagem img {
+        min-height: 300px;
+    }
+
+    .outros-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-conteudo {
+        padding: 22px 0;
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
+
+
+/* =========================================================
+   TELAS MUITO PEQUENAS
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .banner {
+        min-height: 510px;
+    }
+
+    .banner h1 {
+        font-size: 2.7rem;
+    }
+
+    .outros-grid,
+    .instagram-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .outro-card img {
+        height: 260px;
+    }
+
+    .desconto {
+        font-size: 4.3rem;
+    }
+}
